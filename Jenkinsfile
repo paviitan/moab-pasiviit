@@ -77,7 +77,7 @@ pipeline
         {
             steps
             {
-                SendMessageToSlackViaJava(config, "cg3791jenk test message")
+                SendMessageToSlackViaJava(config, "hello slack")
             }
         }
     }

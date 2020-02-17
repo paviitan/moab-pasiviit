@@ -1,5 +1,12 @@
 @Library('KOSi Pipeline Library') _
 
+def config = [
+    slack : [
+        channel : '#proj-moab-oulu',
+        onlyOnFail : 'false'
+    ]
+]
+
 pipeline
 {
     agent any
@@ -64,6 +71,13 @@ pipeline
             steps
             {
                 echo "${STAGE_NAME}"                                
+            }
+        }
+		stage('slack')
+        {
+            steps
+            {
+                SendMessageToSlackViaJava(config, "cg3791jenk test message")
             }
         }
     }

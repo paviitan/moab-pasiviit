@@ -1,3 +1,5 @@
+@Library('KOSi Pipeline Library') _
+
 pipeline
 {
     agent any
